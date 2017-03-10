@@ -8,7 +8,8 @@ Test of the npm packages xlsx and simply-trello
 #### Change to project directory
 `cd excelttest`
 
-#### Edit line 3 of obseatingchart.js with yourKey and yourToken
+#### Edit line 3 of obseatingchart.js with yourKey and yourToken from Trello
+See https://github.com/PotOfCoffee2Go/simply-trello README.md for how to get a Trello key/token.
 
 #### Install node dependencies
 `npm install`
