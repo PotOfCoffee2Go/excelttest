@@ -44,9 +44,6 @@ var first_sheet_name = workbook.SheetNames[0];
 /* Get worksheet */
 var worksheet = workbook.Sheets[first_sheet_name];
 
-// Each person (card) will be assigned to the table they to be seated
-var tableSeating = {};
-
 // Walk thru the rows of the worksheet
 for (var z in worksheet) {
     /* all keys that do not begin with "!" correspond to cell addresses */
@@ -57,13 +54,9 @@ for (var z in worksheet) {
     if (z[0] === 'C' && Number(z.substr(1)) > 3 ) {
         // Name of the list (ie: table #) is in column 'B'
         var table = 'Table ' + worksheet[('B' + z.substr(1))].v;
-        // Add a list (table #) if it does not already exist
-        if (typeof tableSeating[table] === 'undefined') {
-            tableSeating[table] = [];
-        }
+
         // Add first (column D) & last (column C) name of person to that table
         var person = worksheet[('D' + z.substr(1))].v + ' ' + worksheet[z].v;
-        tableSeating[table].push({person: person});
         trelloEntries.push({list:table, card:person});
     }
 }
@@ -79,5 +72,3 @@ myEmitter.on('trelloEvent', () => {
 
 // Start sending updates to Trello
 myEmitter.emit('trelloEvent');
-
-//console.log(tableSeating);
