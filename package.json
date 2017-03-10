@@ -2,7 +2,7 @@
   "name": "excel-test",
   "version": "1.0.0",
   "description": "Test of the excel npm package",
-  "main": "2016 O&B Guest List.xlsx.js",
+  "main": "obseatingchart.js",
   "repository": "https://github.com/PotOfCoffee2Go/excelttest.git",
   "license": "MIT",
   "author": "PotOfCoffee2Go",
